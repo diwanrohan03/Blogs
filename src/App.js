@@ -2,26 +2,18 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import BlogList from "./components/BlogList";
 import BlogDetails from "./components/BlogDetails";
-import "./App.css";
 
 function App() {
   return (
-    <Router>
-      <div className="app">
-        <header className="header">
-          <h1>📰 My Blog App</h1>
-          <nav>
-            <Link to="/">Home</Link>
-          </nav>
-        </header>
+    <Router basename="/Blogs">
+      <nav style={{ padding: "10px", background: "#f3f3f3" }}>
+        <Link to="/" style={{ marginRight: "10px" }}>Home</Link>
+      </nav>
 
-        <main className="main-content">
-          <Routes>
-            <Route path="/" element={<BlogList />} />
-            <Route path="/blog/:id" element={<BlogDetails />} />
-          </Routes>
-        </main>
-      </div>
+      <Routes>
+        <Route path="/" element={<BlogList />} />
+        <Route path="/blog/:id" element={<BlogDetails />} />
+      </Routes>
     </Router>
   );
 }
