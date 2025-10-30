@@ -7,36 +7,36 @@ import "./App.css";
 function App() {
   return (
     <Router basename="/Blogs">
-      <div className="app-container">
-        {/* Header Section */}
-        <header className="app-header">
-          <div className="nav-container">
-            <h1 className="logo">My Blogs</h1>
-            <nav className="navbar">
-              <Link to="/" className="nav-link">
+      <div className="app">
+        {/* HEADER */}
+        <header className="header">
+          <div className="header-container">
+            <h1 className="logo">My Blogs App</h1>
+            <nav className="nav">
+              <Link to="/" className="nav-item">
                 Home
               </Link>
-              <Link to="/" className="nav-link">
+              <Link to="/" className="nav-item">
                 About
               </Link>
-              <Link to="/" className="nav-link">
+              <Link to="/" className="nav-item">
                 Contact
               </Link>
             </nav>
           </div>
         </header>
 
-        {/* Main Content */}
-        <main className="main-content">
+        {/* MAIN CONTENT */}
+        <main className="main">
           <Routes>
             <Route path="/" element={<BlogList />} />
             <Route path="/blog/:id" element={<BlogDetails />} />
           </Routes>
         </main>
 
-        {/* Footer */}
-        <footer className="app-footer">
-          <p>© {new Date().getFullYear()} My Blogs | All rights reserved.</p>
+        {/* FOOTER */}
+        <footer className="footer">
+          <p>© {new Date().getFullYear()} My Blogs App | All Rights Reserved</p>
         </footer>
       </div>
     </Router>

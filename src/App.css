@@ -1,82 +1,88 @@
-/* =============================
+/* =======================
    GLOBAL STYLES
-============================= */
+======================= */
 body {
   margin: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f8fafc;
+  font-family: "Poppins", sans-serif;
+  background-color: #f5f7fa;
   color: #333;
 }
 
 a {
   text-decoration: none;
-  color: inherit;
 }
 
-.app-container {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-/* =============================
-   HEADER & NAVBAR
-============================= */
-.app-header {
-  background-color: #ffffff;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+/* =======================
+   HEADER
+======================= */
+.header {
+  background: linear-gradient(90deg, #1e3a8a, #2563eb);
+  color: white;
+  padding: 15px 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 10;
 }
 
-.nav-container {
+.header-container {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 16px;
+  padding: 0 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .logo {
-  font-size: 24px;
-  color: #2563eb;
+  font-size: 26px;
   font-weight: 700;
+  letter-spacing: 1px;
 }
 
-.navbar {
+/* NAVIGATION */
+.nav {
   display: flex;
-  gap: 20px;
+  gap: 25px;
 }
 
-.nav-link {
+.nav-item {
+  color: white;
   font-weight: 500;
-  color: #333;
-  transition: color 0.3s ease;
+  font-size: 16px;
+  transition: 0.3s;
+  position: relative;
 }
 
-.nav-link:hover {
-  color: #2563eb;
+.nav-item::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -4px;
+  background-color: white;
+  transition: width 0.3s ease;
 }
 
-/* =============================
+.nav-item:hover::after {
+  width: 100%;
+}
+
+/* =======================
    MAIN CONTENT
-============================= */
-.main-content {
-  flex: 1;
+======================= */
+.main {
   max-width: 1100px;
   margin: 40px auto;
-  padding: 0 16px;
+  padding: 0 20px;
 }
 
-/* =============================
-   BLOG LIST CARD STYLE
-============================= */
+/* BLOG LIST */
 .blog-card {
-  background: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
   margin-bottom: 20px;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -84,7 +90,7 @@ a {
 
 .blog-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .blog-card h2 {
@@ -97,18 +103,18 @@ a {
   line-height: 1.5;
 }
 
-/* =============================
-   BLOG DETAILS PAGE
-============================= */
+/* =======================
+   BLOG DETAILS
+======================= */
 .blog-details {
-  background-color: #fff;
-  padding: 24px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  background: white;
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .blog-details h2 {
-  color: #1e40af;
+  color: #1e3a8a;
 }
 
 .author-info {
@@ -117,9 +123,6 @@ a {
   color: #2563eb;
 }
 
-/* =============================
-   COMMENTS SECTION
-============================= */
 .comments {
   margin-top: 30px;
 }
@@ -128,7 +131,7 @@ a {
   background-color: #f1f5f9;
   border-radius: 8px;
   padding: 12px 16px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .comment h4 {
@@ -136,20 +139,14 @@ a {
   color: #1e3a8a;
 }
 
-.comment p {
-  margin: 0;
-  color: #333;
-  font-size: 15px;
-}
-
-/* =============================
+/* =======================
    FOOTER
-============================= */
-.app-footer {
-  background-color: #f1f5f9;
+======================= */
+.footer {
+  background-color: #1e3a8a;
+  color: white;
   text-align: center;
   padding: 16px;
-  color: #555;
-  border-top: 1px solid #e5e7eb;
+  margin-top: 40px;
   font-size: 14px;
 }
